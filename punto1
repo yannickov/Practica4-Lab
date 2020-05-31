@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+class compTecnicaEspecial{
+    compTecnicaEspecial(){};
+    ~compTecnicaEspecial(){};
+    virtual void tecnicaEspecial(){};
+};
+
+class compGolpePatada{
+    compGolpePatada(){};
+    ~compGolpePatada(){};
+    virtual void patada(){};
+};
+
+class compPoder{
+    compPoder(){};
+    ~compPoder(){};
+    virtual void poder(){};
+};
+
+class Jiraya: public{
+    Jiraya(){};
+    ~Jiraya(){};
+};
+class Kakashi{
+    Kakashi(){};
+    ~Kakashi(){};
+};
+class Minato{
+    Minato(){};
+    ~Minato(){};
+};
+int main()
+{
+    cout<<"Hello World";
+
+    return 0;
+}
