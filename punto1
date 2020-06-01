@@ -3,33 +3,45 @@
 using namespace std;
 
 class compTecnicaEspecial{
+    public:
     compTecnicaEspecial(){};
-    ~compTecnicaEspecial(){};
     virtual void tecnicaEspecial(){};
+    ~compTecnicaEspecial(){};
 };
 
 class compGolpePatada{
+    public:
     compGolpePatada(){};
-    ~compGolpePatada(){};
     virtual void patada(){};
+    ~compGolpePatada(){};
 };
 
 class compPoder{
+    public:
     compPoder(){};
-    ~compPoder(){};
     virtual void poder(){};
+    ~compPoder(){};
 };
 
-class Jiraya: public{
+class Jiraya: public compTecnicaEspecial,compGolpePatada,compPoder{
     Jiraya(){};
+    void tecnicaEspecial(){cout<<"Jiraya Usa el Rasengan"<<endl;}
+    void patada(){cout<<"Jiraya patea con fuerza"<<endl;}
+    void poder(){cout<<"Jiraya invoca un sapo gigante"<<endl;}
     ~Jiraya(){};
 };
-class Kakashi{
+class Kakashi: public compTecnicaEspecial,compGolpePatada,compPoder{
     Kakashi(){};
+    void tecnicaEspecial(){cout<<"Kakashi usa el chidori"<<endl;}
+    void patada(){cout<<"Kakashi patea rapidamente"<<endl;}
+    void poder(){cout<<"Kakashi activa el sharingan"<<endl;}
     ~Kakashi(){};
 };
-class Minato{
+class Minato: public compTecnicaEspecial,compGolpePatada,compPoder{
     Minato(){};
+    void tecnicaEspecial(){cout<<"Minato usa teletransportación"<<endl;}
+    void patada(){cout<<"Minato patea rapidamente"<<endl;}
+    void poder(){cout<<"Minato activa el modo sabio"<<endl;}
     ~Minato(){};
 };
 int main()
