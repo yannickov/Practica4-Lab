@@ -8,21 +8,66 @@ class compTecnicaEspecial{
     virtual void tecnicaEspecial(){};
     ~compTecnicaEspecial(){};
 };
-
+class TEJiraya: public compTecnicaEspecial{
+    public:
+    TEJiraya(){};
+    void tecnicaEspecial(){cout<<"Jiraya Usa el Rasengan"<<endl;}
+    ~TEJiraya(){};
+};
+class TEKakashi: public compTecnicaEspecial{
+    public:
+    TEKakashi(){};
+    void tecnicaEspecial(){cout<<"Kakashi usa el chidori"<<endl;}
+    ~TEKakashi(){};
+};
+class TEMinato: public compTecnicaEspecial{
+    public:
+    TEMinato(){};
+    void tecnicaEspecial(){cout<<"Minato usa teletransportación"<<endl;}
+    ~TEMinato(){};
+};
 class compGolpePatada{
     public:
     compGolpePatada(){};
     virtual void patada(){};
     ~compGolpePatada(){};
 };
-
+class GPJiraya: public compGolpePatada{
+    GPJiraya(){};
+    void patada(){cout<<"Jiraya patea con fuerza"<<endl;}
+    ~GPJiraya(){};
+};
+class GPKakashi: public compGolpePatada{
+    GPKakashi(){};
+    void patada(){cout<<"Kakashi patea rapidamente"<<endl;}
+    ~GPKakashi(){};
+};
+class GPMinato: public compGolpePatada{
+    GPMinato(){};
+    void patada(){cout<<"Minato patea rapidamente"<<endl;}
+    ~GPMinato(){};
+};
 class compPoder{
     public:
     compPoder(){};
     virtual void poder(){};
     ~compPoder(){};
 };
-
+class PJiraya: public compPoder{
+    PJiraya(){};
+    void poder(){cout<<"Jiraya invoca un sapo gigante"<<endl;}
+    ~PJiraya(){};
+};
+class PKakashi: public compPoder{
+    PKakashi(){};
+    void poder(){cout<<"Kakashi activa el sharingan"<<endl;}
+    ~PKakashi(){};
+};
+class PMinato: public compPoder{
+    PMinato(){};
+    void poder(){cout<<"Minato activa el modo sabio"<<endl;}
+    ~PMinato(){};
+};
 class Luchador{
     protected:
     compTecnicaEspecial* ptrTE;
@@ -38,25 +83,19 @@ class Luchador{
     
 };
 
-class Jiraya: public compTecnicaEspecial,compGolpePatada,compPoder{
+class Jiraya: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
     Jiraya(){};
-    void tecnicaEspecial(){cout<<"Jiraya Usa el Rasengan"<<endl;}
-    void patada(){cout<<"Jiraya patea con fuerza"<<endl;}
-    void poder(){cout<<"Jiraya invoca un sapo gigante"<<endl;}
+    void saludo(){cout<<"Jiraya saluda encima de un sapo"<<endl;}
     ~Jiraya(){};
 };
-class Kakashi: public compTecnicaEspecial,compGolpePatada,compPoder{
+class Kakashi: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
     Kakashi(){};
-    void tecnicaEspecial(){cout<<"Kakashi usa el chidori"<<endl;}
-    void patada(){cout<<"Kakashi patea rapidamente"<<endl;}
-    void poder(){cout<<"Kakashi activa el sharingan"<<endl;}
+    void saludo(){cout<<"Kakashi llega tarde y saluda"<<endl;}
     ~Kakashi(){};
 };
-class Minato: public compTecnicaEspecial,compGolpePatada,compPoder{
+class Minato: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
     Minato(){};
-    void tecnicaEspecial(){cout<<"Minato usa teletransportación"<<endl;}
-    void patada(){cout<<"Minato patea rapidamente"<<endl;}
-    void poder(){cout<<"Minato activa el modo sabio"<<endl;}
+    void saludo(){cout<<"Minato saluda desde el mas alla"<<endl;}
     ~Minato(){};
 };
 int main()
