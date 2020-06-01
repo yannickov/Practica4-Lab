@@ -33,16 +33,19 @@ class compGolpePatada{
     ~compGolpePatada(){};
 };
 class GPJiraya: public compGolpePatada{
+    public:
     GPJiraya(){};
     void patada(){cout<<"Jiraya patea con fuerza"<<endl;}
     ~GPJiraya(){};
 };
 class GPKakashi: public compGolpePatada{
+    public:
     GPKakashi(){};
     void patada(){cout<<"Kakashi patea rapidamente"<<endl;}
     ~GPKakashi(){};
 };
 class GPMinato: public compGolpePatada{
+    public:
     GPMinato(){};
     void patada(){cout<<"Minato patea rapidamente"<<endl;}
     ~GPMinato(){};
@@ -54,16 +57,19 @@ class compPoder{
     ~compPoder(){};
 };
 class PJiraya: public compPoder{
+    public:
     PJiraya(){};
     void poder(){cout<<"Jiraya invoca un sapo gigante"<<endl;}
     ~PJiraya(){};
 };
 class PKakashi: public compPoder{
+    public:
     PKakashi(){};
     void poder(){cout<<"Kakashi activa el sharingan"<<endl;}
     ~PKakashi(){};
 };
 class PMinato: public compPoder{
+    public:
     PMinato(){};
     void poder(){cout<<"Minato activa el modo sabio"<<endl;}
     ~PMinato(){};
@@ -83,20 +89,32 @@ class Luchador{
     
 };
 
-class Jiraya: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
-    Jiraya(){};
+class Jiraya: public Luchador{
+    public:
+    Jiraya(){ptrTE = new TEJiraya; ptrGP = new GPJiraya; ptrP= new PJiraya;}
+    ~Jiraya(){delete ptrTE;delete ptrGP; delete ptrP;}
+    void ejecutarEspecial(){ptrTE->tecnicaEspecial();}
+    void ejecutarPatada(){ptrGP->patada();}
+    void ejecutarPoder(){ptrP->poder();}
     void saludo(){cout<<"Jiraya saluda encima de un sapo"<<endl;}
-    ~Jiraya(){};
 };
-class Kakashi: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
-    Kakashi(){};
+class Kakashi: public Luchador{
+    public:
+    Kakashi(){ptrTE = new TEKakashi; ptrGP = new GPKakashi; ptrP= new PKakashi;}
+    ~Kakashi(){delete ptrTE;delete ptrGP; delete ptrP;}
+    void ejecutarEspecial(){ptrTE->tecnicaEspecial();}
+    void ejecutarPatada(){ptrGP->patada();}
+    void ejecutarPoder(){ptrP->poder();}
     void saludo(){cout<<"Kakashi llega tarde y saluda"<<endl;}
-    ~Kakashi(){};
 };
-class Minato: public compTecnicaEspecial,compGolpePatada,compPoder,Luchador{
-    Minato(){};
+class Minato: public Luchador{
+    public:
+    Minato(){ptrTE = new TEMinato; ptrGP = new GPMinato; ptrP= new PMinato;}
+    ~Minato(){delete ptrTE;delete ptrGP; delete ptrP;}
+    void ejecutarEspecial(){ptrTE->tecnicaEspecial();}
+    void ejecutarPatada(){ptrGP->patada();}
+    void ejecutarPoder(){ptrP->poder();}
     void saludo(){cout<<"Minato saluda desde el mas alla"<<endl;}
-    ~Minato(){};
 };
 int main()
 {
