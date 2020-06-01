@@ -23,6 +23,21 @@ class compPoder{
     ~compPoder(){};
 };
 
+class Luchador{
+    protected:
+    compTecnicaEspecial* ptrTE;
+    compGolpePatada* ptrGP;
+    compPoder* ptrP;
+    public:
+    Luchador(){};
+    virtual void saludo(){};
+    void ejecutarEspecial(){ptrTE->tecnicaEspecial();}
+    void ejecutarPatada(){ptrGP->patada();}
+    void ejecutarPoder(){ptrP->poder();}
+    ~Luchador(){};
+    
+};
+
 class Jiraya: public compTecnicaEspecial,compGolpePatada,compPoder{
     Jiraya(){};
     void tecnicaEspecial(){cout<<"Jiraya Usa el Rasengan"<<endl;}
