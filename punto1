@@ -59,7 +59,7 @@ class compPoder{
 class PJiraya: public compPoder{
     public:
     PJiraya(){};
-    void poder(){cout<<"Jiraya invoca un sapo gigante"<<endl;}
+    void poder(){cout<<"Jiraya activa el modo sabio"<<endl;}
     ~PJiraya(){};
 };
 class PKakashi: public compPoder{
@@ -71,7 +71,7 @@ class PKakashi: public compPoder{
 class PMinato: public compPoder{
     public:
     PMinato(){};
-    void poder(){cout<<"Minato activa el modo sabio"<<endl;}
+    void poder(){cout<<"Minato invoca un sapo gigante"<<endl;}
     ~PMinato(){};
 };
 class Luchador{
@@ -118,7 +118,42 @@ class Minato: public Luchador{
 };
 int main()
 {
-    cout<<"Hello World";
-
+   int opcion=0;
+   cout<<"Bienvenido al creador de personajes de Naruto"<<endl;
+   while (opcion!=4){
+   cout<<"\nElija la ocpion que desee para crear un personaje y ejecutar sus metodos: "<<endl;
+   cout<<"1. Jiraya\n2. Kakashi\n3. Minato\n";
+   cin>>opcion;
+    if (opcion==1){
+       Luchador* personaje = new Jiraya;
+       cout<<endl<<"Resultados:\n";
+       personaje->saludo();
+       personaje->ejecutarEspecial();
+       personaje->ejecutarPoder();
+       personaje->ejecutarPatada();
+       delete personaje;
+    }
+    if (opcion==2){
+       Luchador* personaje = new Kakashi;
+       cout<<endl<<"Resultados:\n";
+       personaje->saludo();
+       personaje->ejecutarEspecial();
+       personaje->ejecutarPoder();
+       personaje->ejecutarPatada();
+       delete personaje;
+    }
+    if (opcion==3){
+       Luchador* personaje = new Minato;
+       cout<<endl<<"Resultados:\n";
+       personaje->saludo();
+       personaje->ejecutarEspecial();
+       personaje->ejecutarPoder();
+       personaje->ejecutarPatada();
+       delete personaje;
+    }
+    cout<<"\nDesea volver a elegir?\n1. Si\n2. No\n";
+    cin>>opcion;
+    if (opcion==2){break;}
+    }
     return 0;
 }
